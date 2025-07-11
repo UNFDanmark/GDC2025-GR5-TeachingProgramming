@@ -26,7 +26,6 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
         ReadInput();
         
         if (speed > 18)
@@ -58,7 +57,7 @@ public class PlayerScript : MonoBehaviour
         Vector3 newVelocity = rb.linearVelocity;
 
         newVelocity.x = moveInput.x * speed;
-        newVelocity.y = moveInput.y * speed;
+        newVelocity.z = moveInput.y * speed;
         rb.linearVelocity = newVelocity;
 
     }
