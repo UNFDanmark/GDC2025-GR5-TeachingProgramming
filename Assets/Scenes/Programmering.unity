@@ -576,6 +576,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3044878efdbc65348a6ce39b288becea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 2
+  cooldownLeft: 0
+  shoot:
+    m_Name: Shoot
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 9945230f-204f-4c98-8435-9107a4bfe47f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 4a47fbf0-24b5-44e5-aae5-7c80517a0304
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Shoot
+      m_Flags: 0
+    m_Flags: 0
   bulletPrefab: {fileID: 5040909369944007961, guid: 3a065f271e7c1c9408369107d3d34084, type: 3}
 --- !u!135 &706519197
 SphereCollider:
