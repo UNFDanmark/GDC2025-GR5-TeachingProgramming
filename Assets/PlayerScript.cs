@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerScript : MonoBehaviour
 {
+    public int coinsCollected;
     public InputAction moveAction;
     public Vector2 moveInput;
     [SerializeField] float speed;
@@ -61,6 +62,13 @@ public class PlayerScript : MonoBehaviour
         rb.linearVelocity = newVelocity;
 
     }
-    
-    
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            coinsCollected++;
+            Destroy(other.gameObject);
+        }
+    }
 }
