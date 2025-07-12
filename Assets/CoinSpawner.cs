@@ -30,7 +30,8 @@ public class CoinSpawner : MonoBehaviour
 
         Vector3 spawnPosition = new Vector3(Random.Range(-xParam, xParam), -1, Random.Range(-zParam, xParam));
 
-        Instantiate(coinPrefab, spawnPosition, Quaternion.identity);
+        // Instantiate(coinPrefab, spawnPosition, Quaternion.Euler(0, 0, 90));
+        Instantiate(coinPrefab, spawnPosition, coinPrefab.transform.rotation);
 
         StartCoroutine(SpawnCoins());
     }
