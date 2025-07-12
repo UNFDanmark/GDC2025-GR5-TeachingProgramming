@@ -576,8 +576,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3044878efdbc65348a6ce39b288becea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 2
+  cooldown: 0.1
   cooldownLeft: 0
+  bulletSpeed: 1000
   shoot:
     m_Name: Shoot
     m_Type: 0

@@ -6,6 +6,7 @@ public class ShootingPoint : MonoBehaviour
 
     public float cooldown = 0.5f;
     public float cooldownLeft;
+    public int bulletSpeed;
 
     
     
@@ -29,7 +30,7 @@ public class ShootingPoint : MonoBehaviour
         
             tempBullet = Instantiate(bulletPrefab, this.transform.position, Quaternion.identity);
             Vector3 rotationvector = new Vector3(transform.rotation.x, transform.rotation.y, transform.rotation.z);
-            tempBullet.GetComponent<Rigidbody>().AddForce(rotationvector * 10000);
+            tempBullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
             cooldownLeft = cooldown;
             
             
