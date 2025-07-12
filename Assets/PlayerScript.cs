@@ -7,6 +7,8 @@ public class PlayerScript : MonoBehaviour
     public InputAction moveAction;
     public Vector2 moveInput;
     [SerializeField] float speed;
+    public int health;
+    public int maxHealth;
     
     public Rigidbody rb;
     
@@ -27,6 +29,8 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
         ReadInput();
         
         if (speed > 18)
@@ -47,7 +51,20 @@ public class PlayerScript : MonoBehaviour
         MoveLogic();
     }
 
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("EnemyBullet"))
+        {
+            health -= 10;
+            if (health <= 0)
+            {
 
+                gameObject.gameObject.GetComponentInChildren<MeshRenderer>().material.color = Color.red;
+                Time.timeScale = 0;
+                
+            }
+        }
+    }
 
     private void ReadInput()
     {
