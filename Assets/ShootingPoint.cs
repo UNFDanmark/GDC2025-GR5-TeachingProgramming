@@ -8,6 +8,8 @@ public class ShootingPoint : MonoBehaviour
     public float cooldownLeft;
     public int bulletSpeed;
 
+    public Animator Animator;
+
     
     
     public InputAction shoot;
@@ -26,6 +28,7 @@ public class ShootingPoint : MonoBehaviour
         cooldownLeft -= Time.deltaTime;
         if (shoot.WasPressedThisFrame() && cooldownLeft <= 0)
         {
+            Animator.SetTrigger("Shoot");
             GameObject tempBullet;
         
             tempBullet = Instantiate(bulletPrefab, this.transform.position, Quaternion.identity); ;

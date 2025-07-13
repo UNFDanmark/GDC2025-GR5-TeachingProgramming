@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] float speed;
     public int health;
     public int maxHealth;
+    public Animator animator;
     
     public Rigidbody rb;
     
@@ -30,7 +31,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
 
-        
+        animator.SetFloat("Speed", rb.linearVelocity.magnitude);
         ReadInput();
         
         if (speed > 18)
@@ -88,4 +89,6 @@ public class PlayerScript : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+    
+    
 }
